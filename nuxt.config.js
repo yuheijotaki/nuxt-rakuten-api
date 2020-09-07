@@ -1,3 +1,5 @@
+require('dotenv').config();
+const {apiUrl,applicationId} = process.env;
 
 export default {
   /*
@@ -51,11 +53,20 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios'
   ],
+  axios: {
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-  }
+  },
+  // .envファイルを扱う
+  // https://qiita.com/taichi0514/items/3939af222dee21a44413
+  env: {
+    apiUrl,
+    applicationId
+  },
 }
