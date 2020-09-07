@@ -32,6 +32,7 @@ export default {
   ** Global CSS
   */
   css: [
+    'ress'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -53,7 +54,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
   axios: {
   },
@@ -68,5 +70,11 @@ export default {
   env: {
     apiUrl,
     applicationId
+  },
+  styleResources: {
+    scss: [
+      // '@/assets/scss/foundation/_config.scss',
+      // '@/assets/scss/foundation/_mixin.scss'
+    ]
   },
 }
