@@ -1,11 +1,10 @@
-<template>
-  <div>
-    <a :href="post.Item.itemUrl">
-      <img :src="post.Item.mediumImageUrls[0].imageUrl">
-      {{ post.Item.itemName.slice(0,20) + "..." }}
-      ¥{{ post.Item.itemPrice }}
-    </a>
-  </div>
+<template lang="pug">
+  li
+    a(:href="post.Item.itemUrl")
+      p.image
+        img(:src="post.Item.mediumImageUrls[0].imageUrl")
+      p.name {{ post.Item.itemName.slice(0,20) + "..." }}
+      p.price ¥{{ post.Item.itemPrice }}
 </template>
 
 <script>
@@ -22,12 +21,8 @@ export default {
 
 <style lang="scss" scoped>
 li {
-  width: 22.5%;
-  margin-top: 3.3%;
-  margin-right: 3.3%;
-  &:nth-child(4n) {
-    margin-right: 0;
-  }
+  width: 25%;
+  text-align: center;
 }
 a {
   display: block;
@@ -37,10 +32,9 @@ a {
 .image {
   font-size: 0;
   line-height: 0;
-  border: #aaa 1px solid;
   img {
-    width: 100%;
-    height: auto;
+    // width: 100%;
+    // height: auto;
   }
 }
 .name {
