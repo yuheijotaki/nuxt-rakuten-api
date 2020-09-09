@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 logo
+  h1 logo test
 </template>
 
 <script>
