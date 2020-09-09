@@ -68,6 +68,11 @@ export default {
   generate: {
     dir: 'docs'
   },
+  // GitHub Pages用
+  // https://qiita.com/peaceiris/items/154fc3f9bccf9e4eb137
+  router: {
+    base: '/nuxt-rakuten-api/'
+  },
   // .envファイルを扱う
   // https://qiita.com/taichi0514/items/3939af222dee21a44413
   env: {
