@@ -34,7 +34,7 @@ jobs:
       run: npm run generate
 
     - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: yuheijotaki/nuxt-rakuten-api
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
