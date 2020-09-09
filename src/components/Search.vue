@@ -1,22 +1,19 @@
 <template lang="pug">
   div
-    ul
-      Post(
-        v-for="(item,index) in data.posts.Items"
-        :key="index"
-        :post="item"
-      )
+    input(
+      v-model="searchText"
+    )
+    button(
+      @click="getItems"
+      value="検索"
+    ) 検索
 </template>
 
 <script>
 import {mapActions, mapState} from 'vuex'
-import Post from '~/components/Post.vue'
 
 export default {
-  name: 'Posts',
-  components: {
-    Post
-  },
+  name: 'Search',
   data() {
     return {
       searchText: 'カービィ'
@@ -41,10 +38,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ul {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  list-style: none;
+div {
+  margin: 40px;
+}
+input {
+  border: #000 1px solid;
 }
 </style>

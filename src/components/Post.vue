@@ -21,8 +21,10 @@ export default {
 
 <style lang="scss" scoped>
 li {
-  width: 25%;
+  width: 200px;
   text-align: center;
+  background: #eee;
+  border: #ccc 1px solid;
 }
 a {
   display: block;
@@ -32,10 +34,6 @@ a {
 .image {
   font-size: 0;
   line-height: 0;
-  img {
-    // width: 100%;
-    // height: auto;
-  }
 }
 .name {
   margin-top: 10px;
