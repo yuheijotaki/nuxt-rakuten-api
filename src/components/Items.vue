@@ -1,21 +1,21 @@
 <template lang="pug">
   div
     ul
-      Post(
-        v-for="(item,index) in data.posts.Items"
+      Item(
+        v-for="(item,index) in data.items.Items"
         :key="index"
-        :post="item"
+        :item="item"
       )
 </template>
 
 <script>
 import {mapActions, mapState} from 'vuex'
-import Post from '~/components/Post.vue'
+import Item from '~/components/Item.vue'
 
 export default {
-  name: 'Posts',
+  name: 'Items',
   components: {
-    Post
+    Item
   },
   data() {
     return {
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     ...mapState({
-      data: state => state.posts,
+      data: state => state.items,
     }),
   },
   mounted() {
@@ -33,7 +33,7 @@ export default {
   methods: {
     ...mapActions({
       getItems() {
-        this.$store.dispatch('posts/getItems', this.searchText)
+        this.$store.dispatch('items/getItems', this.searchText)
       },
     })
   }

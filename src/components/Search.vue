@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     ...mapState({
-      data: state => state.posts,
+      data: state => state.items,
     }),
   },
   mounted() {
@@ -30,7 +30,7 @@ export default {
   methods: {
     ...mapActions({
       getItems() {
-        this.$store.dispatch('posts/getItems', this.searchText)
+        this.$store.dispatch('items/getItems', this.searchText)
       },
     })
   }
@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  margin: 40px;
+  margin-left: 40px;
 }
 input {
   border: #000 1px solid;

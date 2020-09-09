@@ -1,5 +1,5 @@
 export const state = () => ({
-  posts: []
+  items: []
 })
 
 export const actions = {
@@ -10,12 +10,12 @@ export const actions = {
     const keyword = word
     const getUrl = encodeURI(baseUrl + appId + keywordPrefix + keyword)
     const res = await this.$axios.$get(getUrl)
-    commit('setPosts', res)
+    commit('setItems', res)
   }
 }
 
 export const mutations = {
-  setPosts(state, data) {
-    state.posts = data
+  setItems(state, data) {
+    state.items = data
   }
 }

@@ -1,17 +1,17 @@
 <template lang="pug">
   li
-    a(:href="post.Item.itemUrl")
+    a(:href="item.Item.itemUrl")
       p.image
-        img(:src="post.Item.mediumImageUrls[0].imageUrl")
-      p.name {{ post.Item.itemName.slice(0,20) + "..." }}
-      p.price ¥{{ post.Item.itemPrice }}
+        img(:src="item.Item.mediumImageUrls[0].imageUrl")
+      p.name {{ item.Item.itemName.slice(0,20) + "..." }}
+      p.price ¥{{ item.Item.itemPrice }}
 </template>
 
 <script>
 export default {
-  name: 'Post',
+  name: 'Item',
   props:{
-    'post': {
+    'item': {
       type: Object,
       default: ''
     }
