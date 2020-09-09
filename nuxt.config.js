@@ -65,6 +65,9 @@ export default {
   */
   build: {
   },
+  generate: {
+    dir: 'docs'
+  },
   // .envファイルを扱う
   // https://qiita.com/taichi0514/items/3939af222dee21a44413
   env: {
