@@ -7,6 +7,14 @@
       @click="getItems"
       value="検索"
     ) 検索
+    label
+      input(
+        @click="toggleAsurakuCheck(); getItems();"
+        type="checkbox"
+        id="asuraku"
+        value="あす楽対応可能"
+      )
+      | あす楽対応可能
 </template>
 
 <script>
@@ -16,7 +24,8 @@ export default {
   name: 'Search',
   data() {
     return {
-      searchText: 'カービィ'
+      searchText: 'カービィ',
+      asurakuFlag: 0
     }
   },
   computed: {
@@ -30,9 +39,20 @@ export default {
   methods: {
     ...mapActions({
       getItems() {
-        this.$store.dispatch('items/getItems', this.searchText)
+        // this.$store.dispatch('items/getItems', this.searchText)
+        this.$store.dispatch('items/getItems', {
+          text: this.searchText,
+          asrk: this.asurakuFlag
+        })
       },
-    })
+    }),
+    toggleAsurakuCheck() {
+      if (this.asurakuFlag === 0) {
+        this.asurakuFlag = 1
+      } else {
+        this.asurakuFlag = 0
+      }
+    }
   }
 }
 </script>
@@ -41,7 +61,10 @@ export default {
 div {
   margin-left: 40px;
 }
-input {
+input,button {
   border: #000 1px solid;
+}
+button {
+  background: #ccc;
 }
 </style>

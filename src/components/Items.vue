@@ -19,7 +19,8 @@ export default {
   },
   data() {
     return {
-      searchText: 'カービィ'
+      searchText: 'カービィ',
+      asurakuFlag: 0
     }
   },
   computed: {
@@ -33,7 +34,10 @@ export default {
   methods: {
     ...mapActions({
       getItems() {
-        this.$store.dispatch('items/getItems', this.searchText)
+        this.$store.dispatch('items/getItems', {
+          text: this.searchText,
+          asrk: this.asurakuFlag
+        })
       },
     })
   }

@@ -5,6 +5,7 @@
         img(:src="item.Item.mediumImageUrls[0].imageUrl")
       p.name {{ item.Item.itemName.slice(0,20) + "..." }}
       p.price ¥{{ item.Item.itemPrice }}
+      p asuraku{{ item.Item.asurakuFlag }}
 </template>
 
 <script>
