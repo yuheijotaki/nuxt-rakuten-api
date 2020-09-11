@@ -1,5 +1,6 @@
 <template lang="pug">
   div
+    p {{count}}
     input(
       v-model="searchText"
     )
@@ -24,7 +25,7 @@ export default {
   name: 'Search',
   data() {
     return {
-      searchText: 'カービィ',
+      searchText: '',
       asurakuFlag: 0
     }
   },
@@ -52,6 +53,11 @@ export default {
       } else {
         this.asurakuFlag = 0
       }
+    }
+  },
+  computed: {
+    count () {
+      return this.$store.state.keyword
     }
   }
 }

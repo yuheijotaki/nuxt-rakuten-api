@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      searchText: 'カービィ',
+      searchText: '',
       asurakuFlag: 0
     }
   },

@@ -1,5 +1,6 @@
 export const state = () => ({
-  items: []
+  items: [],
+  keyword: ''
 })
 
 export const actions = {
@@ -22,5 +23,8 @@ export const mutations = {
   setItems(state, data) {
     console.log(data)
     state.items = data
+  },
+  setKeyword(state, text) {
+    state.keyword = text
   }
 }

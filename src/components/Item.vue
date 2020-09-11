@@ -1,6 +1,7 @@
 <template lang="pug">
   li
-    a(:href="item.Item.itemUrl")
+    //- a(:href="item.Item.itemUrl")
+    nuxt-link(:to="item.Item.itemCode")
       p.image
         img(:src="item.Item.mediumImageUrls[0].imageUrl")
       p.name {{ item.Item.itemName.slice(0,20) + "..." }}
