@@ -26,12 +26,13 @@ jobs:
     - run: npm ci
 
     - run: npm run generate
+      env:
+        API_URL: ${{ secrets.API_URL }}
+        APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.5.0
       env:
-        API_URL: ${{ secrets.API_URL }}
-        APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: ./dist
