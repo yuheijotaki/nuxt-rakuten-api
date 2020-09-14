@@ -65,9 +65,9 @@ export default {
   */
   build: {
   },
-  generate: {
-    dir: 'docs'
-  },
+  // generate: {
+  //   dir: 'docs'
+  // },
   // GitHub Pages用
   // https://qiita.com/peaceiris/items/154fc3f9bccf9e4eb137
   router: {
