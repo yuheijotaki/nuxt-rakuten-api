@@ -1,13 +1,15 @@
 <template lang="pug">
   div
-    p {{count}}
-    input(
-      v-model="searchText"
+    form(
+      @submit.prevent
     )
-    button(
-      @click="getItems"
-      value="検索"
-    ) 検索
+      input(
+        v-model="searchText"
+      )
+      button(
+        @click="getItems"
+        value="検索"
+      ) 検索
     label
       input(
         @click="toggleAsurakuCheck(); getItems();"
@@ -35,6 +37,7 @@ export default {
     }),
   },
   mounted() {
+    this.searchText = this.$store.state.items.keyword
     this.getItems()
   },
   methods: {
@@ -53,11 +56,6 @@ export default {
       } else {
         this.asurakuFlag = 0
       }
-    }
-  },
-  computed: {
-    count () {
-      return this.$store.state.keyword
     }
   }
 }

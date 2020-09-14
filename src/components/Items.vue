@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import {mapActions, mapState} from 'vuex'
+import {mapActions, mapState, mapMutations} from 'vuex'
 import Item from '~/components/Item.vue'
 
 export default {
@@ -29,6 +29,7 @@ export default {
     }),
   },
   mounted() {
+    this.searchText = this.$store.state.items.keyword
     this.getItems()
   },
   methods: {
