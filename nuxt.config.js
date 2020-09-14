@@ -1,5 +1,5 @@
 require('dotenv').config();
-const {apiUrl,applicationId} = process.env;
+const {API_URL,APPLICATION_ID} = process.env;
 
 export default {
   /*
@@ -76,8 +76,8 @@ export default {
   // .envファイルを扱う
   // https://qiita.com/taichi0514/items/3939af222dee21a44413
   env: {
-    apiUrl,
-    applicationId
+    API_URL,
+    APPLICATION_ID
   },
   styleResources: {
     scss: [

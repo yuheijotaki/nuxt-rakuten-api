@@ -5,8 +5,8 @@ export const state = () => ({
 
 export const actions = {
   async getItems({ commit }, { text, asrk }) {
-    const baseUrl = `${process.env.apiUrl}`
-    const appId = `applicationId=${process.env.applicationId}`
+    const baseUrl = `${process.env.API_URL}`
+    const appId = `applicationId=${process.env.APPLICATION_ID}`
     const keywordPrefix = '&keyword='
     const keyword = text
     // const pagePrefix = '&page='
