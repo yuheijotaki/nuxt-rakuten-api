@@ -1,17 +1,17 @@
 <template lang="pug">
-  div
-    form(
+  div.search
+    form.search-form(
       @submit.prevent
     )
-      input(
+      input.search-form__input(
         v-model="searchText"
       )
-      button(
+      button.search-form__button(
         @click="getItems"
         value="検索"
       ) 検索
-    label
-      input(
+    label.search-label
+      input.search-label__toggle(
         @click="toggleAsurakuCheck(); getItems();"
         type="checkbox"
         id="asuraku"
@@ -38,6 +38,8 @@ export default {
   },
   mounted() {
     this.searchText = this.$store.state.items.keyword
+    this.asurakuFlag = this.$store.state.items.asuraku
+    this.setAsurakuCheck()
     this.getItems()
   },
   methods: {
@@ -56,19 +58,48 @@ export default {
       } else {
         this.asurakuFlag = 0
       }
+    },
+    setAsurakuCheck() {
+      if (this.asurakuFlag === 1) {
+        document.getElementById('asuraku').checked = true
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-div {
+.search {
+  display: flex;
+  align-items: center;
   margin-left: 40px;
+  font-size: 16px;
+  line-height: 1;
 }
-input,button {
-  border: #000 1px solid;
+.search-form {
 }
-button {
-  background: #ccc;
+.search-form__input,
+.search-form__button {
+  padding: 4px 8px;
+  height: 34px;
+}
+.search-form__input {
+  border: #aaa 1px solid;
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+  color: #111;
+  width: 400px;
+}
+.search-form__button {
+  background-color: #333;
+  border: #333 1px solid;
+  border-radius: 0 2px 2px 0;
+  color: #fff;
+}
+.search-label {
+  margin-left: 20px;
+}
+.search-label__toggle {
+  margin-right: 4px;
 }
 </style>

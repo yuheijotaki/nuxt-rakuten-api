@@ -1,5 +1,6 @@
 <template lang="pug">
-  h1 logo github action test 16:20
+  h1.logo
+    nuxt-link.logo__anchor(to="/") Nuxt.js + 楽天市場API
 </template>
 
 <script>
@@ -9,4 +10,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo {
+  font-size: 18px;
+  line-height: 1;
+}
+.logo__anchor {
+  color: #111;
+  text-decoration: none;
+}
 </style>

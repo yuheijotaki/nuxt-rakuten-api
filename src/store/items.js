@@ -1,6 +1,7 @@
 export const state = () => ({
   items: [],
-  keyword: 'カーヴィ'
+  keyword: 'カーヴィ',
+  asuraku: 0
 })
 
 export const actions = {
@@ -17,6 +18,7 @@ export const actions = {
     const res = await this.$axios.$get(getUrl)
     commit('setItems', res)
     commit('setKeyword', keyword)
+    commit('setCheck', asuraku)
   }
 }
 
@@ -26,5 +28,8 @@ export const mutations = {
   },
   setKeyword(state, text) {
     state.keyword = text
+  },
+  setCheck(state, check) {
+    state.asuraku = check
   }
 }

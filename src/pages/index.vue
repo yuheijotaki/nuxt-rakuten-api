@@ -1,9 +1,10 @@
 <template lang="pug">
   div
-    header
+    header.header
       Logo
       Search
-    Items
+    main.main
+      Items
 </template>
 
 <script>
@@ -13,6 +14,7 @@ import Items from '~/components/Items.vue'
 
 export default {
   components: {
+    Logo,
     Search,
     Items
   },
@@ -25,9 +27,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  display: flex;
-  align-items: center;
-  margin: 40px;
-}
 </style>

@@ -1,6 +1,6 @@
 <template lang="pug">
-  div
-    ul
+  div.items
+    ul.items__list
       Item(
         v-for="(item,index) in data.items.Items"
         :key="index"
@@ -30,6 +30,7 @@ export default {
   },
   mounted() {
     this.searchText = this.$store.state.items.keyword
+    this.asurakuFlag = this.$store.state.items.asuraku
     this.getItems()
   },
   methods: {
@@ -46,10 +47,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-ul {
+.items {
+}
+.items__list {
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
   list-style: none;
 }
 </style>
