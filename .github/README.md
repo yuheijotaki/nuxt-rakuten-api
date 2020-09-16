@@ -1,11 +1,8 @@
-# STATIC
+# Nuxt.js・楽天市場APIでWebアプリをつくる
 
-**This directory is not required, you can delete it if you don't want to use it.**
+## Link
+- [GitHub](https://github.com/yuheijotaki/nuxt-rakuten-api)
+- [GitHub Pages](https://yuheijotaki.github.io/nuxt-rakuten-api/)
+- [ブログ記事](https://jtk.hatenablog.com/entry/2020/09/16/091655)
 
-This directory contains your static files.
-Each file inside this directory is mapped to `/`.
-Thus you'd want to delete this README.md before deploying to production.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).
+## 構成
