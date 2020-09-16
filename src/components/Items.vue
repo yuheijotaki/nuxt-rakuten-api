@@ -1,11 +1,15 @@
 <template lang="pug">
   div.items
-    ul.items__list
-      Item(
-        v-for="(item,index) in data.items.Items"
-        :key="index"
-        :item="item"
-      )
+    template(v-if="data.items.count !== 0")
+      ul.items__list
+        Item(
+          v-for="(item,index) in data.items.Items"
+          :key="index"
+          :item="item"
+        )
+    template(v-else)
+      div.items__empty
+        p.items__empty-text 該当する検索結果がありませんでした。
 </template>
 
 <script>
@@ -54,5 +58,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+}
+.items__empty {
+}
+.items__empty-text {
+  color: #111;
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>
